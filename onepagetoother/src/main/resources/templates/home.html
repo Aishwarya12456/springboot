@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+</head>
+<body>
+<h1> my first web applocation</h1>
+<p th:text="'hi,'+${home}+'...have a nce day'"></p>
+<div>
+    <ul>
+        <li><a th:href="@{/home}">home</a></li>
+        <li><a th:href="@{/about-us}">about us</a></li>
+        <li><a th:href="@{/contact-us}">contact us</a></li>
+        <li><a th:href="@{/services}">services</a></li>
+    </ul>
+</div>
+
+</body>
+</html>

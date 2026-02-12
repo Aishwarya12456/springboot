@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="employee" class="com.javatechie.demo4.Employee" scope="singleton">
+        <constructor-arg value="101"/>
+        <constructor-arg value="Aishwarya"/>
+        <constructor-arg value="50000"/>
+    </bean>
+    <bean id="employee2" class="com.javatechie.demo4.Employee" scope="prototype">
+        <constructor-arg value="102"/>
+        <constructor-arg value="Aishwarya"/>
+        <constructor-arg value="50000"/>
+    </bean>
+
+<!--    <bean id="employee2" class="com.javatechie.demo4.Employee">-->
+<!--        <constructor-arg value="102"/>-->
+<!--        <constructor-arg value="Aishwarya"/>-->
+<!--        <constructor-arg value="50000"/>-->
+<!--    </bean>-->
+
+
+
+</beans>

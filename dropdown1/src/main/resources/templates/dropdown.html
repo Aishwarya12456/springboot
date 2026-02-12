@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dropdown Example</title>
+</head>
+<body>
+
+<h2>Select Country</h2>
+
+<form th:action="@{/submitCountry}" method="post">
+
+    <select name="country">
+        <option th:each="c : ${countries}"
+                th:value="${c}"
+                th:text="${c}">
+        </option>
+    </select>
+
+    <br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

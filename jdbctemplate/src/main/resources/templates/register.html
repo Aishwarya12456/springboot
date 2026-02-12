@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container-fluid ps-md-0">
+    <div class="row g-0">
+        <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+        <div class="col-md-8 col-lg-6">
+            <div class="login d-flex align-items-center py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 col-lg-8 mx-auto">
+                            <h3 class="login-heading mb-4">Welcome back!</h3>
+
+                            <!-- Sign In Form -->
+                            <form th:action="@{/register}" th:object="${user}" method="post" id="registerForm">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="fullName" placeholder="Jhon Doe" th:field="*{fullName}">
+                                    <label for="fullName">Full Name</label>
+                                    <span th:errors="*{fullName}" class="text-danger"></span>
+                                    <span class="text-danger"></span>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" th:field="*{email}">
+                                    <label for="floatingInput">Email address</label>
+                                    <span th:errors="*{email}" class="text-danger"></span>
+                                    <span class="text-danger"></span>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" th:field="*{password}">
+                                    <label for="floatingPassword">Password</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingPhoneNumber" placeholder="9876543210" th:field="*{phone}">
+                                    <label for="floatingPhoneNumber">Phone Number</label>
+                                    <span th:errors="*{phone}" class="text-danger"></span>
+                                    <span class="text-danger"></span>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="male" name="gender" value="m" th:field="*{gender}">
+                                    <label class="form-check-label" for="male">Male</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="female" name="gender" value="f" th:field="*{gender}">
+                                    <label class="form-check-label" for="female">Female</label>
+                                </div>
+                                <br><br>
+                                <div class="form-check form-check-inline mb-3">
+                                    <input type="checkbox" class="form-check-input" id="reading" value="reading" th:field="*{hobbies}">
+                                    <label for="reading" class="form-check-label">Reading</label>
+                                </div>
+                                <div class="form-check form-check-inline mb-3">
+                                    <input type="checkbox" class="form-check-input" id="writing" value="writing" th:field="*{hobbies}">
+                                    <label for="writing" class="form-check-label">Writing</label>
+                                </div>
+                                <div class="form-check form-check-inline mb-3">
+                                    <input type="checkbox" class="form-check-input" id="cooking" value="cooking" th:field="*{hobbies}">
+                                    <label for="cooking" class="form-check-label">Cooking</label>
+                                </div>
+                                <div class="mb-3 form-floating">
+                                    <select class="form-select" id="country" th:field="*{country}">
+                                        <option value="india">India</option>
+                                        <option value="usa">USA</option>
+                                    </select>
+                                    <label for="country">Country</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="date" class="form-control" id="dob" placeholder="dd/mm/yyyy" th:field="*{dob}">
+                                    <label for="dob">Date of Birth</label>
+                                    <span class="text-danger"></span>
+                                </div>
+
+                                <div class="d-grid">
+                                    <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Register</button>
+
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/register.js"></script>
+</body>
+</html>
